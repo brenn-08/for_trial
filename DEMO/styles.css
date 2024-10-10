@@ -1,130 +1,549 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* FOR THE BACKGROUND */
+.background {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.blur {
+  filter: blur(4px);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* FOR THE PROFILE PICTURE */
+.profile {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 10px solid rgb(255, 255, 255);
+  object-fit: cover;
+}
+
+/* FOR THE NAME AND TITLE */
+.name-title {
+  position: absolute;
+  text-align: center;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  color: rgb(255, 253, 250);
+  letter-spacing: 5px;
+}
+
 h1 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 400%;
-    font-weight: 500;
-    line-height: 0.10;
-  }
-  
-  h2 {
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif; 
-    font-weight: 50;
-    font-size: 150%;
-    line-height: 0.5;
-  }
-  
-  /* The dropdown container */
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
-  /* Dropdown button */
-  .dropdown .dropbutton {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: black;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    /* Important for vertical align on mobile phones */
-    margin: 0;
-    /* Important for vertical align on mobile phones */
-  }
-  
-  /* Add a red background color to nav links on hover */
-  .nav a:hover,
-  .dropdown:hover .dropbutton {
-    background-color: red;
-  }
-  
-  /* Dropdown content (hidden by default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  /* Add a grey background color to dropdown links on hover */
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .nav {
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  .nav a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
-  .dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-  
-  .nav a:hover,
-  .dropdown:hover .dropbtn {
-    background-color: red;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+  font-family: Century Gothic, sans-serif;
+  font-size: 600%;
+  font-weight: 500%;
+  line-height: 0.10;
+}
+
+h2 {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 500;
+  font-size: 250%;
+  line-height: 0.8;
+}
+
+/* FOR THE NAVIGATION BUTTONS (WITHIN THE PAGE) */
+.nav {
+  position: absolute;
+  top: 50%;
+  right: 17%;
+  transform: translateY(-50%);
+}
+
+.nav a {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 120%;
+  font-weight: bold;
+  color: rgb(98, 135, 190);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+/* FOR THE ABOUT SECTION */
+.about {
+  padding-top: 20px;
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-bottom: 80px;
+  font-family: EB Garamond;
+  font-size: 250%;
+  line-height: 0.80cm;
+}
+
+.about h3 {
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.about p {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 50%;
+}
+
+/* FOR THE PHOTOS RELATING TO HOBBIES */
+.images {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.collage {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 4px;
+}
+
+.collage img {
+  width: 376px;
+  height: 380px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.collage img:hover {
+  transform: scale(1.05);
+}
+
+/* FOR THE ABOUT CONTENT */
+.about h4 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 70%;
+  letter-spacing: 1px;
+}
+
+.about li {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 50%;
+}
+
+/* FOR THE RESUME SECTION */
+.resume {
+  padding-top: 50px;
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-bottom: 50px;
+  font-size: 250%;
+  line-height: 0.80cm;
+  background-color: rgb(220, 236, 252);
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+/* FOR THE SKILLS AND EXPERIENCE */
+#s-e {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  font-size: 250%;
+}
+
+.skills, .experience {
+  flex: 1;
+  padding: 20px;
+  padding-bottom: 0px;
+  border-radius: 8px;
+  line-height: 0.70cm;
+}
+
+.skills {
+  padding-left: 480px;
+}
+
+.experience {
+  padding-right: 480px;
+}
+
+.skills h4, .experience h4 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 70%;
+  letter-spacing: 1px;
+}
+
+.skills p, .experience p, .experience li {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 45%;
+}
+
+hr.solid {
+  border-top: 3px solid #90befa;
+}
+
+/* FOR THE SKILLS GRAPH */
+#graph {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-bottom: 100px;
+  font-size: 250%;
+  line-height: 0.70cm;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 70%;
+}
+
+.skill p {
+  flex-basis: 180px;
+  margin: 0;
+  align-items: center;
+  font-weight: bold;
+  font-size: 60%;
+  white-space: nowrap
+}
+
+.stars {
+  text-align: left;
+  margin-left: 120px;
+  flex-basis: 100px;
+  align-items: center;
+  font-size: 24px;
+  font-size: 70%;
+}
+
+.description {
+  margin-left: 80px;
+  color: gray;
+  font-size: 56%;
+}
+
+/* FOR THE EDUCATION SECTION */
+#educ {
+  padding-top: 50px;
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-bottom: 120px;
+  font-size: 250%;
+  line-height: 0.80cm;
+  background-color: rgb(229, 238, 247);
+  text-align: center;
+}
+
+.education h4 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 70%;
+  letter-spacing: 1px;
+}
+
+.education p {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 45%;
+}
+
+/* FOR THE EDUCATIONAL TIMELINE */
+.educ-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 30px;
+  margin-left: 20px;
+  border-left: 2px solid #cfcbcb;
+}
+
+.educ-bg {
+  position: relative;
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 88%;
+  border-left: 5px solid #283758;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.educ-bg h4 {
+  margin: 0;
+  font-size: 50%;
+  color: #283758;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+.educ-timeline .desc {
+  margin-left: 80px;
+  margin-right: 50px;
+  font-size: 40%;
+}
+
+.degree {
+  margin-top: 5px;
+  font-style: italic;
+  color: #333;
+}
+
+.year {
+  margin-top: 10px;
+  font-size: 90%;
+  color: #888;
+}
+
+.desc {
+  margin-top: 15px;
+  font-size: 90%;
+  color: #666;
+  text-align: left;
+}
+
+.educ-bg:before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 10px;
+  width: 10px;
+  background-color: #283758;
+  border-radius: 50%;
+}
+
+/* FOR THE PROJECTS SECTION */
+#proj {
+  line-height: 0.80cm;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 250%;
+}
+
+.intro {
+  margin-top: 20px;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-bottom: 50px;
+  font-size: 45%;
+}
+
+h4 {
+  color: #283758;
+  margin-bottom: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 70%;
+  letter-spacing: 1px;
+}
+
+.project {
+  background-color: #ffffff;
+  padding: 30px;
+  margin: 15px auto;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.02);
+}
+
+.project h4 {
+  margin-top: 0;
+  color: #283758;
+  font-size: 1.2rem;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  letter-spacing: 0px;
+}
+
+.project p {
+  margin-top: 0;
+  color: #283758;
+  font-size: 40%;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  letter-spacing: 0px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  font-size: 65%;
+}
+
+.project-link {
+  color: #283758;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  position: relative;
+  font-size: 65%;
+}
+
+.project-link:hover {
+  color: #0A74DA;
+}
+
+.project-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #0A74DA;
+  transition: width 0.3s, left 0.3s;
+}
+
+.project-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* FOR THE CONTACT SECTION */
+.contact {
+  padding-top: 50px;
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-bottom: 50px;
+  font-size: 250%;
+  line-height: 0.80cm;
+  background-color: rgb(220, 236, 252);
+  text-align: center;
+  letter-spacing: 5px;
+  font-family: EB Garamond;
+}
+
+#contact {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  padding-bottom: 100px;
+}
+
+#contact h4 {
+  padding-top: 60px;
+  font-size: 150%;
+  font-weight: bold;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  padding-bottom: 50px;
+}
+
+#contact h5 {
+  padding-top: 10px;
+  font-size: 100%;
+}
+
+#contact p {
+  padding-top: 0px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.contact-info {
+  flex-basis: 40%;
+  padding: 20px;
+  background-color: #eef6fd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  line-height: 0.70cm;
+}
+
+.contact-info h3 {
+  color: #283758;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin: 10px 0;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #283758;
+}
+
+.contact-form {
+  flex-basis: 40%;
+  padding: 20px;
+  background-color: #eef6fd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h5 {
+  color: #283758;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+.btn {
+  background-color: #283758;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.btn:hover {
+  background-color: #1c2b43;
+}
